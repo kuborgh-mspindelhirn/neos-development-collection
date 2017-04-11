@@ -158,7 +158,8 @@ function(
 					} else {
 						selected = (presetIdentifier === dimensionConfiguration.defaultPreset);
 					}
-					presets.push(Preset.create($.extend(true, {selected: selected, identifier: presetIdentifier}, presetConfiguration)));
+					var translatedLabel = I18n.translate(presetConfiguration.label);
+					presets.push(Preset.create($.extend(true, {selected: selected, identifier: presetIdentifier}, presetConfiguration, {label: translatedLabel})));
 				});
 
 				if (presets.length > 1) {
